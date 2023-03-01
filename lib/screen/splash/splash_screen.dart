@@ -11,6 +11,7 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          //kkk
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
