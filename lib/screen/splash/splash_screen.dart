@@ -64,6 +64,8 @@ class SplashScreen extends StatelessWidget {
             goToScreenPushNamedAndpop(
               screenNames: ScreenNames.introScreen,);
           },),
+
+          // last
         ],
       ),
     );
