@@ -1,15 +1,51 @@
 part of 'routes.dart';
+//use
+goToScreen({required String screenNames, Object? arguments }) {
 
-goToScreen({required String screenNames, Object? arguments}) {}
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.pushNamed(Get.context!, screenNames, arguments: arguments  );
+}
+//use
+goToScreenpopAndPushNamed({required String screenNames, Object? arguments}) {
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.popAndPushNamed(Get.context!, screenNames, arguments: arguments);
+}
 
-goToScreenPopAndPushNamed({required String screenNames, Object? arguments}) {}
+goToScreenPushNamedAndpop({required String screenNames, Object? arguments}) {
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.pushReplacementNamed(Get.context!, screenNames, arguments: arguments);
+}
+//use
+goBack({Object? arguments}) {
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.pop(Get.context! , arguments );
+}
 
-goToScreenPushNamedAndPop({required String screenNames, Object? arguments}) {}
+goToWithRemoveRoute({required String screenNames, Object? arguments}) {
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.of(Get.context!).pushNamedAndRemoveUntil(
+      screenNames, (Route<dynamic> route) => false);
+  // Navigator.pushNamed(Get.context, screenNames);
+}
+popUntilScreen({required String screenNames}) {
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.of(Get.context!)
+      .popUntil(ModalRoute.withName(screenNames));
+}
 
-goBack({Object? arguments}) {}
 
-goToWithRemoveRoute({required String screenNames, Object? arguments}) {}
 
-popUntilScreen({required String screenNames}) {}
+goToIntro({required String screenNames, Object? arguments}) {
+  // FocusScope.of(Get.context).unfocus();
+  // Navigator.of(Get.context).pushNamedAndRemoveUntil(screenNames, (Route<dynamic> route) => false);
+  // Navigator.pushNamed(Get.context, screenNames);
 
-goPopUntil({required String screenNames, Object? arguments}) {}
+  FocusScope.of(Get.context!).unfocus();
+  // Navigator.of(Get.context).pushNamedAndRemoveUntil(screenName, (Route<dynamic> route) => false);
+  Get.offNamedUntil(screenNames, (route) => false);
+}
+
+goPopUntil({required String screenNames, Object? arguments}) {
+  FocusScope.of(Get.context!).unfocus();
+  Navigator.of(Get.context!).popUntil(ModalRoute.withName(screenNames));
+}

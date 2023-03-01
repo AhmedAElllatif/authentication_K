@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:poffeh_app/routes/routes.dart';
 import 'package:poffeh_app/screen/splash/splash_screen.dart';
 import 'package:poffeh_app/utility/app_theme.dart';
 
@@ -11,9 +14,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: appTheme,
-      home:  SplashScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 761),//from xd
+      minTextAdapt: true,//true daeman
+      splitScreenMode: true,//true daeman
+      builder: (context , child) {
+        return GetMaterialApp(
+          theme: appTheme,
+          debugShowCheckedModeBanner: false,
+          routes: appRoutes(context), //method in routes.dart file
+          initialRoute:  ScreenNames.defaultscreen,
+//          initialRoute:  ScreenNames.loginScreen
+
+        );
+      }
     );
   }
 }
