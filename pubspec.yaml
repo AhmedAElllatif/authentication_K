@@ -41,6 +41,8 @@ dependencies:
   flutter_screenutil: ^5.5.4
   get: ^4.6.5
   flutter_svg: ^1.1.5
+  dio: ^4.0.0
+  shared_preferences: ^2.0.8
 
 
 dev_dependencies:
