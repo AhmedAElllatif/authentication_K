@@ -39,6 +39,8 @@ dependencies:
   equatable: ^2.0.5
   package_info_plus: ^3.0.3
   flutter_screenutil: ^5.5.4
+  get: ^4.6.5
+  flutter_svg: ^1.1.5
 
 
 dev_dependencies:
@@ -64,6 +66,20 @@ flutter:
   uses-material-design: true
   assets:
     - assets/img/
+    - assets/icons/
+
+  fonts:
+    - family: ALMARAI-REGULAR
+      fonts:
+        - asset: assets/fonts/ALMARAI-REGULAR.ttf
+
+    - family: ALMARAI-LIGHT
+      fonts:
+        - asset: assets/fonts/ALMARAI-LIGHT.ttf
+
+    - family: ALMARAI-BOLDd
+      fonts:
+        - asset: assets/fonts/ALMARAI-BOLD.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

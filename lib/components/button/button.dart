@@ -7,6 +7,7 @@ import '../text/custom_text.dart';
 class CustomButton extends StatelessWidget {
   final String? text;
   final double height;
+  final double width;
   final Function? onPressed;
   final double fontSize;
   final Color color;
@@ -16,7 +17,8 @@ class CustomButton extends StatelessWidget {
 
   const CustomButton({
     Key? key,
-    this.height = 40.0,
+    this.height = 50.0,
+    this.width = double.infinity,
     this.onPressed,
     this.fontSize = 14,
     this.text,
@@ -31,7 +33,7 @@ class CustomButton extends StatelessWidget {
     return Container(
       height: height,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30.r),
+          borderRadius: BorderRadius.circular(8.r),
           color: color ,
           border: isButtonBorder
               ? Border.all(color: borderColor == null
@@ -43,7 +45,7 @@ class CustomButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(30.r),
+          borderRadius: BorderRadius.circular(8.r),
           onTap: () {
             onPressed == null ? goBack() : onPressed!();
           },
@@ -52,7 +54,7 @@ class CustomButton extends StatelessWidget {
               bold: false,
               text: text!,
               fontSize: fontSize,
-              fontFamily: AppFonts.fontKUFIB,
+              fontFamily: AppFonts.fontBold,
               color: colorFont,
               maxLines: 1,
             ),
