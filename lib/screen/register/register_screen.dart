@@ -13,28 +13,19 @@ import '../../components/text_field/text_field_custom.dart';
 import '../../helper/validation.dart';
 import '../../utility/all_app_words.dart';
 
-class LoginScreen extends StatelessWidget {
-  static const routeName ='LoginScreen';
+class RegisterScreen extends StatelessWidget {
+
+  static const routeName = 'RegisterScreen';
+
   var nameController = TextEditingController();
   var passwordController = TextEditingController();
+  var passwordAgainController = TextEditingController();
+  var userNameController = TextEditingController();
+  var emailController = TextEditingController();
+  var phoneController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-  create: (context) => LoginCubit(),
-  child: BlocConsumer<LoginCubit, LoginStates>(
-  listener: (context, state) {
-    if(state is LoginSuccessState){
-      if(state.loginModel.state!){
-        CacheHelper.saveData(key: 'token', value: state.loginModel.data!.token!.accessToken!).then((value) {
-          goToScreen(screenNames: ScreenNames.registerScreen);
-        });
-      }else{
-        print(state.loginModel.message![0].value!);
-      }
-    }
- },
-  builder: (context, state) {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -47,7 +38,7 @@ class LoginScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(onPressed: (){
-          goBack();
+            goBack();
           },
               icon: Icon(Icons.arrow_forward_ios,color: Colors.black,))
         ],
@@ -69,12 +60,28 @@ class LoginScreen extends StatelessWidget {
                     height: 15.h,
                   ),
                   CustomTextField(
-                    controller: nameController,
+                    controller: userNameController,
                     hintText: LLogin.user_name,
                     labelText: '',
                     inputType: TextInputType.name,
                     textFieldVaidType: TextFieldvalidatorType.DisplayText,
                   ),
+                  CustomTextField(
+                    controller: nameController,
+                    hintText: LLogin.name,
+                    labelText: '',
+                    inputType: TextInputType.name,
+                    textFieldVaidType: TextFieldvalidatorType.DisplayText,
+                  ),
+                  CustomTextField(controller: emailController,
+                      inputType: TextInputType.emailAddress,
+                      labelText: '', hintText: LLogin.email,
+                      textFieldVaidType: TextFieldvalidatorType.Email),
+                  CustomTextField(controller: phoneController,
+                      inputType: TextInputType.phone,
+                      labelText: '',
+                      hintText: LLogin.phone,
+                      textFieldVaidType: TextFieldvalidatorType.Number),
 
                   CustomTextField(
                     controller: passwordController,
@@ -84,43 +91,25 @@ class LoginScreen extends StatelessWidget {
                     inputType: TextInputType.text,
                     textFieldVaidType: TextFieldvalidatorType.Password,
                   ),
+                  CustomTextField(
+                    controller: passwordAgainController,
+                    hintText: LLogin.password_again,
+                    labelText: '',
+                    obscureText: true,
+                    inputType: TextInputType.text,
+                    textFieldVaidType: TextFieldvalidatorType.Password,
+                  ),
                   SizedBox(
                     height: 20.h,
                   ),
-                  state is! LoginLoadingState ?  CustomButton(
+                 CustomButton(
                     fontSize: 14.sp,
                     color: AppColors.mainColor,
-                    text:LLogin.login,
+                    text:LLogin.register,
                     onPressed: (){
-                    if(formKey.currentState!.validate()){
-                      LoginCubit.get(context).login(userName: nameController.text, password: passwordController.text, rememberMe: 'true');
-//                      goToScreen(screenNames: ScreenNames.defaultscreen);
-                    }
-                  },) : CircularProgressIndicator(),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  InkWell(
-                    onTap: (){
-
-                    },
-                    child: CustomText(text: LLogin.forget_password, color: AppColors.Kbluecolor, fontSize: 14.sp,
-                        fontFamily: AppFonts.fontMedium),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 14.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomText(text: LLogin.haveAccount, color: AppColors.black, fontSize: 14.sp,
-                            fontFamily: AppFonts.fontMedium),
-                        SizedBox(width: 5.w,),
-                        CustomText(text: LLogin.admin, color: AppColors.mainColor, fontSize: 14.sp,
-                            fontFamily: AppFonts.fontMedium),
-                      ],
-                    ),
-                  )
-
+                      if(formKey.currentState!.validate()){
+                      }
+                    },),
 
                 ],
               ),
@@ -129,8 +118,5 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
-  },
-),
-);
   }
 }

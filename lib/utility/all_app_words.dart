@@ -2,8 +2,13 @@ part 'app_images.dart';
 
 class LLogin {
   static const String user_name = 'user name';
+  static const String name = ' name';
+  static const String email = 'Email address';
+  static const String phone = 'Phone';
   static const String password = 'password';
+  static const String password_again = 'password again';
   static const String login = 'login';
+  static const String register = 'register as admin';
   static const String welcome = 'مرحبا بك';
   static const String welcome_desc = 'سجل دخولك بواسطة اسم المستخدم وكلمة السر وتمتع معنا بتطبيق المطبخ';
   static const String forget_password = 'forget password';
