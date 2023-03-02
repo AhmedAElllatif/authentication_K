@@ -1,11 +1,11 @@
 part of 'routes.dart';
-//use
+//use this to go and you can return
 goToScreen({required String screenNames, Object? arguments }) {
 
   FocusScope.of(Get.context!).unfocus();
   Navigator.pushNamed(Get.context!, screenNames, arguments: arguments  );
 }
-//use
+//use this to go and you cannt return
 goToScreenpopAndPushNamed({required String screenNames, Object? arguments}) {
   FocusScope.of(Get.context!).unfocus();
   Navigator.popAndPushNamed(Get.context!, screenNames, arguments: arguments);
@@ -15,7 +15,7 @@ goToScreenPushNamedAndpop({required String screenNames, Object? arguments}) {
   FocusScope.of(Get.context!).unfocus();
   Navigator.pushReplacementNamed(Get.context!, screenNames, arguments: arguments);
 }
-//use
+//use this to go back
 goBack({Object? arguments}) {
   FocusScope.of(Get.context!).unfocus();
   Navigator.pop(Get.context! , arguments );

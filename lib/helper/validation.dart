@@ -16,8 +16,6 @@ enum TextFieldvalidatorType {
   Optional,
   IdNumberSudia,
   IdNumberNotSudia,
-
-
 }
 
 validation(

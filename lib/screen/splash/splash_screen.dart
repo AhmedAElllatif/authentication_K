@@ -6,6 +6,7 @@ import '../../components/button/button.dart';
 import '../../utility/app_theme.dart';
 
 class SplashScreen extends StatelessWidget {
+  //k
   @override
   Widget build(BuildContext context) {
     return Scaffold(
