@@ -26,7 +26,7 @@ class RegisterViewModel{
       'PhoneNumber':phoneController.text,
       'Email':emailController.text,
       'Name':nameController.text,
-      'Role':'Admin',//k
+      'Role':'Admin',//kk
       'Password':passwordController.text,
       'ConfirmPassword':passwordAgainController.text,
     }).then((value) {
