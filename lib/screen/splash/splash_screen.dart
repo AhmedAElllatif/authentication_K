@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:poffeh_app/routes/routes.dart';
-import 'package:poffeh_app/screen/login/login_screen.dart';
 import 'package:poffeh_app/utility/all_app_words.dart';
 import '../../components/button/button.dart';
 import '../../utility/app_theme.dart';
@@ -14,9 +13,8 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          //kkk
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image(image: AssetImage(AppImage.splash),
                 width:0.8.sw,
@@ -29,7 +27,7 @@ class SplashScreen extends StatelessWidget {
             height: 0.12.sh,
           ),
          Padding(
-           padding: const EdgeInsets.all(16.0),
+           padding:  EdgeInsets.all(16.sp),
            child: Column(
              children: [
                Image(image: AssetImage(AppImage.logo),
@@ -39,8 +37,8 @@ class SplashScreen extends StatelessWidget {
                ),SizedBox(
                  height: 15.h,
                ),
-               Text('Get Start Now',style: TextStyle(
-                 fontSize: 25.0,
+                Text('Get Start Now',style: TextStyle(
+                 fontSize: 25.sp,
                  fontWeight: FontWeight.w400,
                )),
                SizedBox(
@@ -55,7 +53,8 @@ class SplashScreen extends StatelessWidget {
                SizedBox(
                  height: 20.h,
                ),
-               CustomButton(width: 0.7.sw,fontSize: 14.sp,color: AppColors.mainColor,text:'Get Started Now',onPressed: (){
+               CustomButton(width: 0.7.sw,fontSize: 14.sp,color: AppColors.mainColor,
+                 text:'Get Started Now',onPressed: (){
                 goToScreen(screenNames: ScreenNames.loginScreen);
                },),
              ],

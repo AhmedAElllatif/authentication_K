@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,//for ScreenUtilInit ,true daeman
       builder: (context , child) { //for ScreenUtilInit
         return GetMaterialApp(
+          locale: const Locale("ar"),
           theme: appTheme,
           debugShowCheckedModeBanner: false,
           routes: appRoutes(context), //appRoutes() is method in routes.dart file (dont forget to import get: ^4.6.5 and convert MaterialApp to GetMaterialApp)
