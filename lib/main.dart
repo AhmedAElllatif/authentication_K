@@ -3,8 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:poffeh_app/routes/routes.dart';
 import 'package:poffeh_app/utility/app_theme.dart';
+import 'helper/cache_helper.dart';
+import 'helper/helper.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();  //lAn ba await ala CacheHelper.init() lazem el main ybka async we lAn el main bka async lazwm adef el method...> WidgetsFlutterBinding.ensureInitialized()
+  Helper.init();
+
   runApp(const MyApp());
 }
 
