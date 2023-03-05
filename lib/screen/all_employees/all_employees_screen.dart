@@ -8,7 +8,6 @@ import '../../utility/all_app_words.dart';
 import '../../utility/app_theme.dart';
 
 class AllEployeesScreen extends StatelessWidget {
-  static const routeName = 'AllEployeesScreen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

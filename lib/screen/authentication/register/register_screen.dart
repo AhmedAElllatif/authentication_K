@@ -3,40 +3,41 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:poffeh_app/components/text/custom_text.dart';
 import 'package:poffeh_app/cubits/generic_cubit/generic_cubit.dart';
-import 'package:poffeh_app/routes/routes.dart';
-import 'package:poffeh_app/screen/register/register_view_model.dart';
-import 'package:poffeh_app/utility/app_theme.dart';
-import '../../components/button/button.dart';
-import '../../components/text_field/text_field_custom.dart';
-import '../../helper/validation.dart';
-import '../../utility/all_app_words.dart';
+import 'package:poffeh_app/screen/authentication/register/register_view_model.dart';
+
+import '../../../components/button/button.dart';
+import '../../../components/text_field/text_field_custom.dart';
+import '../../../helper/validation.dart';
+import '../../../routes/routes.dart';
+import '../../../utility/all_app_words.dart';
+import '../../../utility/app_theme.dart';
+
 
 class RegisterScreen extends StatelessWidget {
-  static const routeName = 'RegisterScreen';
   RegisterViewModel registerViewModel = RegisterViewModel();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding:  EdgeInsets.all(8.sp),
-          child: Image(
-            image: const AssetImage(AppImage.logo),
-            width: 49.w,
-            height: 34.h,
-            fit: BoxFit.fill,
-          ),
-        ),
+        leading: IconButton(
+            onPressed: () {
+              goBack();
+            },
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            )),
         actions: [
-          IconButton(
-              onPressed: () {
-                goBack();
-              },
-              icon: const Icon(
-                Icons.arrow_forward_ios,
-                color: Colors.black,
-              ))
+          Padding(
+            padding:  EdgeInsets.all(8.sp),
+            child: Image(
+              image: const AssetImage(AppImage.logo),
+              width: 49.w,
+              height: 34.h,
+              fit: BoxFit.fill,
+            ),
+          ),
         ],
       ),
       body: Center(
@@ -122,7 +123,7 @@ class RegisterScreen extends StatelessWidget {
                     listener: (context, state) {},
                     builder: (context, state) {
                       return state.data!
-                          ? CircularProgressIndicator() : CustomButton(
+                          ? const CircularProgressIndicator() : CustomButton(
                         fontSize: 14.sp,
                         color: AppColors.mainColor,
                         text: LLogin.register,

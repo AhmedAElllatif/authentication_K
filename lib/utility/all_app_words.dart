@@ -1,22 +1,23 @@
 part 'app_images.dart';
 
 class LLogin {
-  static const String user_name = 'user name';
-  static const String name = ' name';
-  static const String email = 'Email address';
-  static const String phone = 'Phone';
-  static const String password = 'password';
+  static const String user_name = 'اسم المستخدم';
+  static const String name = 'الإسم';
+  static const String email = 'البريد الإلكتروني';
+  static const String phone = 'الجوال';
+  static const String password = 'كلمة السر';
+  static const String empty = 'الحقل فارغ';
   static const String next = 'التالي';
-  static const String password_again = 'password again';
-  static const String login = 'login';
-  static const String register = 'register as admin';
+  static const String password_again = 'تأكيد كلمة السر';
+  static const String login = 'تسجيل الدخول';
+  static const String register = 'تسجيل كأدمن';
   static const String password_again_desc = 'من فضلك بريديك الإلكتروني الخاص بالشركة';
   static const String welcome = 'مرحبا بك';
   static const String welcome_desc = 'سجل دخولك بواسطة اسم المستخدم وكلمة السر وتمتع معنا بتطبيق المطبخ';
-  static const String forget_password = 'forget password';
-  static const String haveAccount ='Do you have company?';
-  static const String activation ='Enter activation code';
-  static const String ensure ='Ensure';
+  static const String forget_password = 'نسيت كلمة المرور';
+  static const String haveAccount ='هل تمتلك شركة ؟';
+  static const String activation ='اضف مز التحقق';
+  static const String ensure ='تحقق';
   static const String password_aagain = 'نسيت كلمة المرور';
 }
 

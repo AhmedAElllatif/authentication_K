@@ -11,7 +11,6 @@ import 'package:poffeh_app/utility/app_theme.dart';
 import 'components/my_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const routeName = 'HomeScreen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

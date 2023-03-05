@@ -14,7 +14,6 @@ import '../../utility/all_app_words.dart';
 import '../../utility/app_theme.dart';
 
 class AddDepartmentScreen extends StatelessWidget {
-  static const routeName = 'AddDepartmentScreen';
   var deptController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   @override
