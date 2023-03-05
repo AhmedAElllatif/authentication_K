@@ -102,7 +102,7 @@ validation(
       return 'Must not be empty';
     }
     if (value.length != 10) {
-      return 'Must not be equal than 10';
+      return 'Must be equal 10';
     }
     if (!regExpNumber.hasMatch(value.trim().replaceAll('‎', ''))) {
       return 'Not Correct';

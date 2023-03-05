@@ -6,6 +6,7 @@ class AppColors {
   static Color headerColor =  Color(0xffBDD6E6);
   static Color rateColor =  Color(0xfffE9F2FB);
   static Color green = Color(0xff059452);
+  static Color grey = Color(0xffA3A3A3);
   static Color bkScreen = Color(0xFFF6F6F6);
   static Color fillColor = Color(0xffE2E2E2);
   static Color fillColorBackGround = Color(0xffD5D6D8);
@@ -28,6 +29,7 @@ class AppColors {
   static Color kGrey2Color = const Color(0xffDBDBDB);
   static Color kUnselecttabColor = const Color(0xff747474);
   static Color kGreyColor = const Color(0xff707070);
+  static Color GreyColor = const Color(0xffD5D5D5);
   //////////////////////////////////////////
   static Color KblackColor =Colors.black;
   static Color KblacktextColor =const Color(0xff2D2D2D);
