@@ -124,12 +124,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
           floatingLabelBehavior: FloatingLabelBehavior.always,
 
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular( widget.maxLines == null ? 30.r : 15.r),
+            borderRadius: BorderRadius.circular( widget.maxLines == null ? 8.r:8.r),
             borderSide: BorderSide.none,
             gapPadding: 10,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular( widget.maxLines == null ? 30.r : 15.r),
+            borderRadius: BorderRadius.circular( widget.maxLines == null ? 8.r:8.r),
             borderSide: BorderSide.none,
           ),
         ),

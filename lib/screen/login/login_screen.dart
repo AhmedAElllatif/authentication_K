@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:poffeh_app/components/text/custom_text.dart';
 import 'package:poffeh_app/helper/cache_helper.dart';
 import 'package:poffeh_app/routes/routes.dart';
@@ -27,9 +28,18 @@ class LoginScreen extends StatelessWidget {
     if(state is LoginSuccessState){
       if(state.loginModel.state!){
         CacheHelper.saveData(key: 'token', value: state.loginModel.data!.token!.accessToken!).then((value) {
-          goToScreen(screenNames: ScreenNames.registerScreen);
+          goToScreen(screenNames: ScreenNames.homeScreen);
         });
       }else{
+        Fluttertoast.showToast(
+          msg: state.loginModel.message![0].value!,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          toastLength: Toast.LENGTH_LONG, // LENGTH_LONG 5s for android
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 5,  //5s for Ios,Web
+          fontSize: 16.0,
+        );
         print(state.loginModel.message![0].value!);
       }
     }
@@ -39,7 +49,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Image(image: AssetImage('assets/img/logo.png'),
+          child: Image(image: AssetImage(AppImage.logo),
             width: 49.w,
             height: 34.h,
             fit: BoxFit.fill,
@@ -102,7 +112,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: (){
-
+                      goToScreen(screenNames: ScreenNames.forgetPasswordScreen);
                     },
                     child: CustomText(text: LLogin.forget_password, color: AppColors.Kbluecolor, fontSize: 14.sp,
                         fontFamily: AppFonts.fontMedium),
@@ -115,8 +125,13 @@ class LoginScreen extends StatelessWidget {
                         CustomText(text: LLogin.haveAccount, color: AppColors.black, fontSize: 14.sp,
                             fontFamily: AppFonts.fontMedium),
                         SizedBox(width: 5.w,),
-                        CustomText(text: LLogin.admin, color: AppColors.mainColor, fontSize: 14.sp,
-                            fontFamily: AppFonts.fontMedium),
+                        InkWell(
+                          onTap: (){
+                            goToScreen(screenNames: ScreenNames.registerScreen);
+                          },
+                          child: CustomText(text: LLogin.register, color: AppColors.mainColor, fontSize: 14.sp,
+                              fontFamily: AppFonts.fontMedium),
+                        ),
                       ],
                     ),
                   )

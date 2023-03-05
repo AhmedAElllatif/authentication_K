@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:poffeh_app/routes/routes.dart';
 import 'package:poffeh_app/screen/login/login_screen.dart';
+import 'package:poffeh_app/utility/all_app_words.dart';
 import '../../components/button/button.dart';
 import '../../utility/app_theme.dart';
 
@@ -17,7 +18,7 @@ class SplashScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Image(image: AssetImage('assets/img/splash.png'),
+              Image(image: AssetImage(AppImage.splash),
                 width:0.8.sw,
                 height: 0.4.sh,
                 fit: BoxFit.cover,
@@ -31,7 +32,7 @@ class SplashScreen extends StatelessWidget {
            padding: const EdgeInsets.all(16.0),
            child: Column(
              children: [
-               Image(image: AssetImage('assets/img/logo.png'),
+               Image(image: AssetImage(AppImage.logo),
                  width: 0.2.sw,
                  height:0.1.sh,
                  fit: BoxFit.fill,
@@ -54,13 +55,12 @@ class SplashScreen extends StatelessWidget {
                SizedBox(
                  height: 20.h,
                ),
-               CustomButton(fontSize: 14.sp,color: AppColors.mainColor,text:'Get Started Now',onPressed: (){
+               CustomButton(width: 0.7.sw,fontSize: 14.sp,color: AppColors.mainColor,text:'Get Started Now',onPressed: (){
                 goToScreen(screenNames: ScreenNames.loginScreen);
                },),
              ],
            ),
          )
-
           // last
         ],
       ),

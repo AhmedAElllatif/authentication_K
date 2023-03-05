@@ -9,6 +9,9 @@ final ThemeData appTheme = ThemeData(
       centerTitle: true,
       color: Colors.white,
       elevation: 0,
+    iconTheme: IconThemeData(
+      color: AppColors.black
+    )
       ),
 );
 
