@@ -34,7 +34,7 @@ class RegisterViewModel{
       getRegisterCubit.update(data: false);
       if(registerModel!.state!){
         Navigator.push(Get.context!, MaterialPageRoute(
-            builder: (context) => EnsureScreen(password: passwordController.text,userName:userNameController.text)));
+            builder: (context) => EnsureScreen(password: passwordController.text,userName:userNameController.text,uId: registerModel!.data!.userId!,)));
       }else{
         showToast(msg: registerModel!.message![0].value!, backgroundColor: AppColors.red);
       }

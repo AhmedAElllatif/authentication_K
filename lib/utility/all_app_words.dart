@@ -2,6 +2,7 @@ part 'app_images.dart';
 
 class LLogin {
   static const String user_name = 'اسم المستخدم';
+  static const String passwordC = 'اعاده تعين كلمه السر';
   static const String name = 'الإسم';
   static const String email = 'البريد الإلكتروني';
   static const String phone = 'الجوال';
@@ -15,6 +16,7 @@ class LLogin {
   static const String welcome = 'مرحبا بك';
   static const String welcome_desc = 'سجل دخولك بواسطة اسم المستخدم وكلمة السر وتمتع معنا بتطبيق المطبخ';
   static const String forget_password = 'نسيت كلمة المرور';
+  static const String resend = 'اعاده ارسال الكود';
   static const String haveAccount ='هل تمتلك شركة ؟';
   static const String activation ='اضف مز التحقق';
   static const String ensure ='تحقق';

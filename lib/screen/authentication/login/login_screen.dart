@@ -94,8 +94,7 @@ class LoginScreen extends StatelessWidget {
                         color: AppColors.mainColor,
                         text: LLogin.login,
                         onPressed: () {
-                          if (loginViewModel.formKey.currentState!
-                              .validate()) {
+                          if (loginViewModel.formKey.currentState!.validate()) {
                             loginViewModel.login(rememberMe: 'true');
                           }
                         },

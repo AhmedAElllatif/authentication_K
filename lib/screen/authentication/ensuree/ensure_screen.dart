@@ -14,7 +14,8 @@ import 'ensuree_view_model.dart';
 class EnsureScreen extends StatelessWidget {
   final String password;
   final String userName;
-  EnsureScreen({super.key, required this.password, required this.userName});
+  final String uId;
+  EnsureScreen({super.key, required this.password, required this.userName, required this.uId});
   EnsureeViewModel ensureeViewModel = EnsureeViewModel();
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class EnsureScreen extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.all(26.sp),
+            padding: EdgeInsets.all(26.sp),
             child: Form(
               key: ensureeViewModel.formKey,
               child: Column(
@@ -163,7 +164,7 @@ class EnsureScreen extends StatelessWidget {
                         Expanded(
                           child: Padding(
                             padding:
-                            const EdgeInsets.symmetric(horizontal: 5.0),
+                                const EdgeInsets.symmetric(horizontal: 5.0),
                             child: TextFormField(
                               maxLength: 1,
                               controller: ensureeViewModel.field6,
@@ -189,21 +190,39 @@ class EnsureScreen extends StatelessWidget {
                   ),
                   BlocConsumer<GenericCubit<bool>, GenericState<bool>>(
                     bloc: ensureeViewModel.getEnsuree,
-                    listener: (context, state) {
-                    },
+                    listener: (context, state) {},
                     builder: (context, state) {
-                      return state.data! ?const CircularProgressIndicator() : CustomButton(
-                        text: LLogin.ensure,
-                        onPressed: () {
-                          if (ensureeViewModel.formKey.currentState!
-                              .validate()) {
-                            ensureeViewModel.ensure(
-                              password: password,
-                              username: userName,
+                      return state.data!
+                          ? const CircularProgressIndicator()
+                          : CustomButton(
+                              text: LLogin.ensure,
+                              onPressed: () {
+                                if (ensureeViewModel.formKey.currentState!
+                                    .validate()) {
+                                  ensureeViewModel.ensure(
+                                    password: password,
+                                    username: userName,
+                                  );
+                                }
+                              },
+                              color: AppColors.mainColor,
                             );
-                          }
+                    },
+                  ),
+                  SizedBox(height: 15.h,),
+                  BlocConsumer<GenericCubit<bool>, GenericState<bool>>(
+                    bloc: ensureeViewModel.getResend,
+                    listener: (context, state) {},
+                    builder: (context, state) {
+                      return state.data! ? const CircularProgressIndicator() : InkWell(
+                        onTap: () {
+                          ensureeViewModel.regenerateCode(username: userName, userId: uId);
                         },
-                        color: AppColors.mainColor,
+                        child: CustomText(
+                            text: LLogin.resend,
+                            color: AppColors.Kbluecolor,
+                            fontSize: 14.sp,
+                            fontFamily: AppFonts.fontMedium),
                       );
                     },
                   ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:poffeh_app/components/text/custom_text.dart';
+import 'package:poffeh_app/helper/cache_helper.dart';
 import 'package:poffeh_app/routes/routes.dart';
 import 'package:poffeh_app/utility/all_app_words.dart';
 import 'package:poffeh_app/utility/app_theme.dart';
@@ -82,7 +83,9 @@ class MyDrawer extends StatelessWidget {
             ),
             InkWell(
               onTap: (){
-                goToScreen(screenNames: ScreenNames.loginScreen);
+                CacheHelper.removeData(key: 'token').then((value) {
+                  goToScreen(screenNames: ScreenNames.loginScreen);
+                });
               },
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
