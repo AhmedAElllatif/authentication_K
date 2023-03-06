@@ -2,14 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:poffeh_app/components/my_toast/my_toast.dart';
 import 'package:poffeh_app/cubits/generic_cubit/generic_cubit.dart';
 import 'package:poffeh_app/utility/app_theme.dart';
-
 import '../../../helper/cache_helper.dart';
 import '../../../helper/helper.dart';
 import '../../../models/login_model.dart';
 import '../../../routes/routes.dart';
 
 
-class LoginViewModel{
+class LoginViewModel{  //finish
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
