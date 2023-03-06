@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:poffeh_app/helper/cache_helper.dart';
 import 'package:poffeh_app/routes/routes.dart';
 import 'package:poffeh_app/utility/all_app_words.dart';
 import '../../components/button/button.dart';
@@ -55,7 +56,11 @@ class SplashScreen extends StatelessWidget {
                ),
                CustomButton(width: 0.7.sw,fontSize: 14.sp,color: AppColors.mainColor,
                  text:'Get Started Now',onPressed: (){
-                goToScreen(screenNames: ScreenNames.loginScreen);
+                 CacheHelper.saveData(key: 'splash', value: true).then((value) {
+                   if(value){
+                     goToScreen(screenNames: ScreenNames.loginScreen);
+                   }
+                 });
                },),
              ],
            ),

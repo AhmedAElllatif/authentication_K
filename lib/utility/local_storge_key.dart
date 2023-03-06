@@ -4,3 +4,4 @@ class LocalStoreNames {
   static const String userData = 'userData';
   static const String playerId = 'playerId';
 }
+String? token= '';
