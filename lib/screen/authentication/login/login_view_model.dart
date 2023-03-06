@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:poffeh_app/components/my_toast/my_toast.dart';
 import 'package:poffeh_app/cubits/generic_cubit/generic_cubit.dart';
 import 'package:poffeh_app/utility/app_theme.dart';
+import 'package:poffeh_app/utility/local_storge_key.dart';
 import '../../../helper/cache_helper.dart';
 import '../../../helper/helper.dart';
 import '../../../models/login_model.dart';
@@ -35,7 +36,8 @@ class LoginViewModel{  //finish
             key: 'token',
             value: loginModel!.data!.token!.accessToken!)
             .then((value) {
-          goToScreen(screenNames: ScreenNames.homeScreen);
+              token = loginModel!.data!.token!.accessToken!;
+          goToScreenpopAndPushNamed(screenNames: ScreenNames.homeScreen);
         });
       } else {
         showToast(msg: loginModel!.message![0].value!, backgroundColor: AppColors.red);

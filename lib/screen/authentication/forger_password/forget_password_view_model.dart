@@ -27,8 +27,7 @@ class ForgetPasswordViewModel{
             MaterialPageRoute(
                 builder: (context) => EnsurePasswordScreen(
                     id: forgetPasswordModel!.data!.applicationUser!.id!,
-                    userName: forgetPasswordModel!.data!
-                        .applicationUser!.userName!)));
+                    userName: forgetPasswordModel!.data!.applicationUser!.userName!)));
       } else {
         showToast(msg: forgetPasswordModel!.message![0].value!, backgroundColor: AppColors.red);
       }

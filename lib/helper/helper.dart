@@ -56,25 +56,25 @@ class Helper {
     );
   }
 
-  static Future<Response> putData({
-    required String url,
-    required Map<String, dynamic> data,
-    Map<String, dynamic>? query,
-//    String lang = 'en',
-//    String? token,
-  }) async
-  {
-    //write what is in headers her
-    dio.options.headers = {         //look at headers in post man
-//      'lang':lang,
-//      'Authorization': token??'',
-      'Content-Type': 'application/json',
-    };
-
-    return dio.put(
-      url,
-      queryParameters: query,
-      data: data,
-    );
-  }
+//  static Future<Response> putData({
+//    required String url,
+//    required Map<String, dynamic> data,
+//    Map<String, dynamic>? query,
+////    String lang = 'en',
+////    String? token,
+//  }) async
+//  {
+//    //write what is in headers her
+//    dio.options.headers = {         //look at headers in post man
+////      'lang':lang,
+////      'Authorization': token??'',
+//      'Content-Type': 'application/json',
+//    };
+//
+//    return dio.put(
+//      url,
+//      queryParameters: query,
+//      data: data,
+//    );
+//  }
 }
